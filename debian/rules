@@ -78,14 +78,12 @@ override_dh_auto_configure:
 		--enable-sql \
 		--enable-mongodb \
 		--enable-json \
-		--enable-systemd \
 		--enable-riemann \
 		\
 		--with-libmongo-client=system \
 		--with-ivykis=system \
 		\
 		--with-module-dir='$${exec_prefix}/lib/syslog-ng/${UMAJOR}' \
-		--with-systemdsystemunitdir="/lib/systemd/system" \
 		\
 		SOURCE_REVISION="$${SOURCE_REVISION}" \
 		${EXTRA_CONFIGURE_OPTS}
@@ -218,4 +216,4 @@ get-orig-source:
 
 # And for the rest, there is debhelper!
 %:
-	dh $@ --with autoreconf,systemd --parallel
+	dh $@ --with autoreconf --parallel
